@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/01_MyFirstProject/01_MyFirstProject.iml" filepath="$PROJECT_DIR$/01_MyFirstProject/01_MyFirstProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/02_Variable/02_Variable.iml" filepath="$PROJECT_DIR$/02_Variable/02_Variable.iml" />
+      <module fileurl="file://$PROJECT_DIR$/03_Operator/03_Operator.iml" filepath="$PROJECT_DIR$/03_Operator/03_Operator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/04_ControlStatement/04_ControlStatement.iml" filepath="$PROJECT_DIR$/04_ControlStatement/04_ControlStatement.iml" />
+      <module fileurl="file://$PROJECT_DIR$/05_Array/05_Array.iml" filepath="$PROJECT_DIR$/05_Array/05_Array.iml" />
+      <module fileurl="file://$PROJECT_DIR$/06_Object/06_Object.iml" filepath="$PROJECT_DIR$/06_Object/06_Object.iml" />
+      <module fileurl="file://$PROJECT_DIR$/07_ObjectArray/07_ObjectArray.iml" filepath="$PROJECT_DIR$/07_ObjectArray/07_ObjectArray.iml" />
+      <module fileurl="file://$PROJECT_DIR$/08_Inherit/08_Inherit.iml" filepath="$PROJECT_DIR$/08_Inherit/08_Inherit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/09_Polymorphism/09_Polymorphism.iml" filepath="$PROJECT_DIR$/09_Polymorphism/09_Polymorphism.iml" />
+      <module fileurl="file://$PROJECT_DIR$/10_library/10_library.iml" filepath="$PROJECT_DIR$/10_library/10_library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/11_GenericCollections/11_GenericCollections.iml" filepath="$PROJECT_DIR$/11_GenericCollections/11_GenericCollections.iml" />
+      <module fileurl="file://$PROJECT_DIR$/12_Exception/12_Exception.iml" filepath="$PROJECT_DIR$/12_Exception/12_Exception.iml" />
+      <module fileurl="file://$PROJECT_DIR$/13_IO/13_IO.iml" filepath="$PROJECT_DIR$/13_IO/13_IO.iml" />
+      <module fileurl="file://$PROJECT_DIR$/15_LambdaStream/15_LambdaStream.iml" filepath="$PROJECT_DIR$/15_LambdaStream/15_LambdaStream.iml" />
+      <module fileurl="file://$PROJECT_DIR$/16_Network/16_Network.iml" filepath="$PROJECT_DIR$/16_Network/16_Network.iml" />
+      <module fileurl="file://$PROJECT_DIR$/17_DesignPattern/17_DesignPattern.iml" filepath="$PROJECT_DIR$/17_DesignPattern/17_DesignPattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javakb5.iml" filepath="$PROJECT_DIR$/javakb5.iml" />
+    </modules>
+  </component>
+</project>
