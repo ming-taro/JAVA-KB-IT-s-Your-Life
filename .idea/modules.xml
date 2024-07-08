@@ -15,6 +15,7 @@
       <module fileurl="file://$PROJECT_DIR$/11_GenericCollections/11_GenericCollections.iml" filepath="$PROJECT_DIR$/11_GenericCollections/11_GenericCollections.iml" />
       <module fileurl="file://$PROJECT_DIR$/12_Exception/12_Exception.iml" filepath="$PROJECT_DIR$/12_Exception/12_Exception.iml" />
       <module fileurl="file://$PROJECT_DIR$/13_IO/13_IO.iml" filepath="$PROJECT_DIR$/13_IO/13_IO.iml" />
+      <module fileurl="file://$PROJECT_DIR$/14_Thread/14_Thread.iml" filepath="$PROJECT_DIR$/14_Thread/14_Thread.iml" />
       <module fileurl="file://$PROJECT_DIR$/15_LambdaStream/15_LambdaStream.iml" filepath="$PROJECT_DIR$/15_LambdaStream/15_LambdaStream.iml" />
       <module fileurl="file://$PROJECT_DIR$/16_Network/16_Network.iml" filepath="$PROJECT_DIR$/16_Network/16_Network.iml" />
       <module fileurl="file://$PROJECT_DIR$/17_DesignPattern/17_DesignPattern.iml" filepath="$PROJECT_DIR$/17_DesignPattern/17_DesignPattern.iml" />
