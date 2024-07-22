@@ -19,6 +19,9 @@
       <module fileurl="file://$PROJECT_DIR$/15_LambdaStream/15_LambdaStream.iml" filepath="$PROJECT_DIR$/15_LambdaStream/15_LambdaStream.iml" />
       <module fileurl="file://$PROJECT_DIR$/16_Network/16_Network.iml" filepath="$PROJECT_DIR$/16_Network/16_Network.iml" />
       <module fileurl="file://$PROJECT_DIR$/17_DesignPattern/17_DesignPattern.iml" filepath="$PROJECT_DIR$/17_DesignPattern/17_DesignPattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/30_ParsingCrawlingCsv/30_ParsingCrawlingCsv.iml" filepath="$PROJECT_DIR$/30_ParsingCrawlingCsv/30_ParsingCrawlingCsv.iml" />
+      <module fileurl="file://$PROJECT_DIR$/31_JDBC_Basic/31_JDBC_Basic.iml" filepath="$PROJECT_DIR$/31_JDBC_Basic/31_JDBC_Basic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/32_MemberMVC/32_MemberMVC.iml" filepath="$PROJECT_DIR$/32_MemberMVC/32_MemberMVC.iml" />
       <module fileurl="file://$PROJECT_DIR$/javakb5.iml" filepath="$PROJECT_DIR$/javakb5.iml" />
     </modules>
   </component>

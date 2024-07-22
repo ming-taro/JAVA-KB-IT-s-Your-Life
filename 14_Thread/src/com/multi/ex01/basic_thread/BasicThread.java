@@ -4,7 +4,7 @@ public class BasicThread {
 	public static int second = 0;
 	public static void main(String[] args) {
 		// 1초를 셀 수 있는 프로그램
-		
+
 		// Main Thread 구간 : main이 실행되는 Thread, 프로그램의 분기가 시작되는 곳
 		while(true) {
 			try {
