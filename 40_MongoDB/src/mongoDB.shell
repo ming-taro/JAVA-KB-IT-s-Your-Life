@@ -1,0 +1,146 @@
+# Mongo DB란?
+ - NoSQL의 대표 DB로 쿼리를 사용하지 않는 DB
+ - RDB와 가장 다른 점은 JOIN 구문이 없지만, 컬랙션(Table)간 _id(key)를 가짐으로써 JOIN과 유사 기능을 지원
+ - 비정형화 된 스키마를 가질수 있으며 데이터간 서로 구성이 달라도 컬랙션(Table)에 저장 가능
+ - 설계할때 ERD를 통해 표현도 가능, 이때는 정형화된 데이터 표현하며, 확장도 가능하다.
+ - RDB보다 유연하게 설계 가능하다 업계에서는 신뢰성이 떨어진다고 생각
+ - 레거시 시스템이나 신뢰성이 중요한 프로젝트는 RDB를 활용
+ - 데이터 분석 분야 또는 Node로 구성하는 프로젝트는 Mongo를 활용
+
+# 메뉴얼 (정리가 잘되어 있어 반드시 참고할 것!)
+- https://www.mongodb.com/ko-kr/docs/manual/
+
+
+Mongo DB 명령어 실습
+
+# 접속하기
+# 7.0 이전
+cmd > mongodb or mongo
+
+# 7.0 이후 -> mongosh 반드시 설치 필요!!
+cmd > mongosh
+
+# Database 생성 또는 Switch 하기
+ - use <DB명칭>
+use testDB
+
+# 현재 접속한 DB 조회하기
+db
+
+# Collection 생성
+ - 방법 1. collection 생성 명령어를 통해 컬랙션 생성하는 법
+ - 방법 2. insert 문 활용시 자동으로 생성하는 방법
+db.createCollection("users")
+db.testCollection.insertOne({"name": "홍길동"})
+ -> 자동으로 testCollection이 생성된다!
+
+# Collection 조회하는 법
+show collections
+
+#Database 생성 확인
+show databases
+
+# Data Insert (삽입)
+ - db.<Collection 이름>.insertOne.({json object})
+ - db.<Collection 이름>.insertMany.({json object}, {json object} ....)
+
+db.users.insertOne({"name": "홍길동"});
+db.users.insertOne({"name": "홍길동", "age": 25});
+db.users.insertOne({"name": "홍길동", "age": 22, "addr":"경기도 광명시"});
+db.users.insertOne({"name": "김길동", "age": 24, "addr":"서울시 강남구", "status":"Y"});
+db.users.insertOne({"name": "최길동", "age": 31, "addr":"서울시 강북구", "status":"N"});
+db.users.insertOne({"name": "황길동", "age": 32, "addr":"서울시 강서구", "status":"Y"});
+
+# 아래와 같이 javascript 문법이 먹힌다!
+for(let i = 0 ; i< 10; i++){
+    db.users.insertOne({"name": "홍길동" + i, "age": 25+i});
+}
+
+
+# list 형태로 데이터 삽입하기
+db.users.insertMany(
+[{"name": "김길동", "age": 24},
+{"name": "최길동", "age": 22},
+{"name": "박길동", "age": 25}]);
+
+
+# Data Select (조회)
+ - db.<Collection 이름>.find({검색 조건},{표현 조건})
+
+db.users.find()
+db.users.find({},{_id:0})   // _id 안보이는 명령어
+db.users.find({name:"홍길동"},{_id:0}) // 이름이 홍길동인 사람 찾기
+db.users.find({age:25},{_id:0}) // 나이가 25살인 사람 찾기
+
+# 조건문 사용 (eq, gt, lt, in ....)
+# https://docs.mongodb.com/manual/reference/operator/query/
+db.users.find({age : {$gt : 25}},{_id:0}) // 25 초과
+db.users.find({age : {$lte : 25}},{_id:0}) // 25 이하
+db.users.find({age : {$in : [25, 26, 27]}}, {_id:0}) // 25, 26, 27인 사람
+
+# 논리 연산자 (and, or)
+db.users.find({$and: [{age : {$gte : 25}},
+                       {age : {$lte : 30}} ]}
+                        ,{_id:0})
+// 25 이상 ~ 30 이하인 사람들
+
+# 정렬하기
+db.users.find({},{_id:0}).sort({age:1}) // age:1 = age 기준으로 오름차순
+db.users.find({},{_id:0}).sort({age:-1}) // age:1 = age 기준으로 내림차순
+
+# 값 제한해서 출력하기 -> page 처리 가능
+db.users.find({},{_id:0}).sort({age:-1}).limit(10)
+
+#문자열 검색하기 -> 정규식
+db.users.find({name:{$regex:"홍"}});
+$regex : "s" --> s가 포함되어있는것을 찾기
+$regex : "s$" --> 끝자리가 s인것을 찾기
+$regex : "^s" --> 첫자리가 s인것을 찾기
+
+
+이름이 홍길동인데, 나이가 출력되지 않게끔.
+db.users.find({name:"홍길동"},{age:0})
+
+# Data Update(갱신)
+ - db.<Collection 이름>.updateOne.({검색어}, {명령어: {업데이트 할 데이터}})
+ - db.<Collection 이름>.updateMany.({검색어}, {명령어: {업데이트 할 데이터}})
+
+# 일부값만 변경하기
+db.users.updateOne({name: "홍길동"}, {$set: {addr: "서울시 강남구"}})
+ - 해당 필드만 업데이트됨
+db.users.updateMany({name: "홍길동"}, {$set: {addr: "서울시 강남구"}}, {multi : true})
+ - 여러 값 변경하기
+
+# 필드 제거
+db.users.updateMany({name: "홍길동"}, {$unset: {addr: ""}})
+ - 해당 필드만 업데이트됨
+
+# 대체 업데이트
+db.users.updateMany({name: "홍길동"}, {name: "황길동", addr: "서울시 성동구"})
+ - document가 대체됨
+
+# 없으면 추가하는 문법
+db.users.updateMany({name: "최길동"}, {name: "최길동", addr: "서울시 성동구"}, { upsert : true })
+
+# 여러 문서 수정
+db.users.updateMany({age:{$gt:20}}, { $set : {status:"N"}},{ multi : true })
+
+# 데이터 삭제 - deleteOne, deleteMany (remove)
+db.users.deleteMany({}) : 모든 도큐먼트 삭제
+db.users.deleteMany({조건}) : 조건과 일치하는 도큐먼트 삭제
+db.users.deleteMany({name:"최길동"})
+
+#count
+db.users.count()
+db.users.count({name:"홍길동"})
+
+#인덱스 & explain()
+db.users.dropIndexes()
+db.users.createIndex({name:1},{name:"userIndex"})
+db.users.getIndexes();
+
+db.users.aggregate( [ { $indexStats: { } } ] )
+
+db.users.find({name:"홍길동"},{}).explain()
+db.users.find().explain("executionStats")
+

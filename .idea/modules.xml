@@ -22,6 +22,8 @@
       <module fileurl="file://$PROJECT_DIR$/30_ParsingCrawlingCsv/30_ParsingCrawlingCsv.iml" filepath="$PROJECT_DIR$/30_ParsingCrawlingCsv/30_ParsingCrawlingCsv.iml" />
       <module fileurl="file://$PROJECT_DIR$/31_JDBC_Basic/31_JDBC_Basic.iml" filepath="$PROJECT_DIR$/31_JDBC_Basic/31_JDBC_Basic.iml" />
       <module fileurl="file://$PROJECT_DIR$/32_MemberMVC/32_MemberMVC.iml" filepath="$PROJECT_DIR$/32_MemberMVC/32_MemberMVC.iml" />
+      <module fileurl="file://$PROJECT_DIR$/33_BoxofficeProject/33_BoxofficeProject.iml" filepath="$PROJECT_DIR$/33_BoxofficeProject/33_BoxofficeProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/40_MongoDB/40_MongoDB.iml" filepath="$PROJECT_DIR$/40_MongoDB/40_MongoDB.iml" />
       <module fileurl="file://$PROJECT_DIR$/javakb5.iml" filepath="$PROJECT_DIR$/javakb5.iml" />
     </modules>
   </component>
